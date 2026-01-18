@@ -112,7 +112,7 @@ export function Contact() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Social profiles</h3>
               <div className="flex gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/shruti-2303"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"
@@ -121,7 +121,7 @@ export function Contact() {
                   <Github size={24} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/shruti-sharma-2303/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"

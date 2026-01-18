@@ -6,30 +6,30 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "Sketch-Sync Realtime Sketchboard",
     description:
-      "A high-performance e-commerce solution with dynamic product filtering, cart management, and payment integration.",
-    problem: "Client needed a fast, scalable online store to handle 10k+ daily visitors.",
-    solution: "Built with Next.js for SSR/SSG, optimized images, and integrated Stripe for payments.",
-    tech: ["Next.js", "React", "Tailwind CSS", "Stripe API"],
+      "A real-time collaborative whiteboarding application that enables multiple users to draw and collaborate simultaneously on a shared canvas interface.",
+    problem: "Teams needed a seamless way to collaborate on visual ideas in real-time without lag or synchronization issues.",
+    solution: "Built a scalable whiteboard application using Socket.IO for real-time communication, supporting 10+ concurrent users with instant canvas updates and smooth collaboration.",
+    tech: ["Socket.IO", "React", "Canvas API", "Node.js", "WebSockets"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Dashboard Analytics",
-    description: "Real-time analytics dashboard with interactive charts, data visualization, and customizable widgets.",
-    problem: "Team needed a centralized view of business metrics with real-time updates.",
-    solution: "Created modular dashboard with React Query for data fetching and Recharts for visualization.",
-    tech: ["React", "TypeScript", "React Query", "Recharts"],
+    title: "AI Article Summarizer",
+    description: "A Chrome extension that intelligently extracts and summarizes web articles using AI, delivering instant summaries in multiple formats.",
+    problem: "Users struggled to quickly understand long-form articles and needed a way to get concise summaries without leaving the page.",
+    solution: "Developed a Chrome extension leveraging content scripts for article extraction, Google Gemini 2.5 Flash API for summarization, with secure API key management via Chrome Storage and robust error handling.",
+    tech: ["Chrome Extension API", "JavaScript", "Google Gemini API", "Chrome Storage", "Content Scripts"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Content Management System",
-    description: "Headless CMS integration for a media company with dynamic page builder and SEO tools.",
-    problem: "Content team struggled with non-technical page updates and SEO optimization.",
-    solution: "Integrated Sanity CMS with Next.js, built custom page builder components.",
-    tech: ["Next.js", "Sanity CMS", "SCSS", "SEO"],
+    title: "ToneShift",
+    description: "An intelligent message rewriting tool that instantly transforms text into different tones like professional, friendly, formal, casual, and promotional.",
+    problem: "Users needed a quick way to adapt their messages for different contexts and audiences without manual rewriting.",
+    solution: "Created a fast, intuitive tool that analyzes text and rewrites it in the selected tone, delivering polished results in under 5 seconds with a simple paste-and-choose interface.",
+    tech: ["React", "AI/ML API", "Natural Language Processing", "TypeScript"],
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -120,7 +120,7 @@ export function Projects() {
             className="text-center mt-12"
           >
             <a
-              href="https://github.com/Shruti-2303"
+              href="https://github.com/shruti-2303"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium"
