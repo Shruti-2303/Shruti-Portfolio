@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Moon, Sun } from "lucide-react"
+import { useScrollToSection } from "@/hooks/use-scroll-to-section"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [theme, setTheme] = useState("light")
+  const scrollToSection = useScrollToSection()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +25,14 @@ export function Header() {
     document.documentElement.classList.toggle("dark")
   }
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
-  }
+  // const scrollToSection = (sectionId) => {
+  //   const element = document.getElementById(sectionId)
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth", block: "start" })
+  //   }
+  // }
+
+  
 
   const navLinks = [
     { id: "home", label: "About" },

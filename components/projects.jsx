@@ -12,8 +12,8 @@ const projects = [
     problem: "Teams needed a seamless way to collaborate on visual ideas in real-time without lag or synchronization issues.",
     solution: "Built a scalable whiteboard application using Socket.IO for real-time communication, supporting 10+ concurrent users with instant canvas updates and smooth collaboration.",
     tech: ["Socket.IO", "React", "Canvas API", "Node.js", "WebSockets"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://sketchsync-2303.vercel.app/",
+    githubUrl: "https://github.com/Shruti-2303/SketchSync",
   },
   {
     title: "AI Article Summarizer",
@@ -22,7 +22,7 @@ const projects = [
     solution: "Developed a Chrome extension leveraging content scripts for article extraction, Google Gemini 2.5 Flash API for summarization, with secure API key management via Chrome Storage and robust error handling.",
     tech: ["Chrome Extension API", "JavaScript", "Google Gemini API", "Chrome Storage", "Content Scripts"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Shruti-2303/AI-Article-Summariser",
   },
   {
     title: "ToneShift",
@@ -30,8 +30,8 @@ const projects = [
     problem: "Users needed a quick way to adapt their messages for different contexts and audiences without manual rewriting.",
     solution: "Created a fast, intuitive tool that analyzes text and rewrites it in the selected tone, delivering polished results in under 5 seconds with a simple paste-and-choose interface.",
     tech: ["React", "AI/ML API", "Natural Language Processing", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://tone-shift-nine.vercel.app/",
+    githubUrl: "https://github.com/Shruti-2303/ToneShift",
   },
 ]
 

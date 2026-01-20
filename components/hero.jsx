@@ -1,7 +1,10 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, ArrowRight } from "lucide-react"
+import { useScrollToSection } from "@/hooks/use-scroll-to-section"
 
 export function Hero() {
+  const scrollToSection = useScrollToSection()
   return (
     <section id="home" className="flex min-h-[calc(100vh-73px)] items-center px-6 md:px-12 lg:px-24 py-20">
       <div className="max-w-5xl">
@@ -19,22 +22,22 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
-        <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
+        <button
+              onClick={() => scrollToSection("projects")}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors cursor-pointer"
             >
             View Projects
             <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
+          </button>
 
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")} className="cursor-pointer">
             Get in Touch
           </Button>
         </div>
 
         <div className="mt-16 flex items-center gap-4">
           <a
-            href="https://github.com"
+            href="https://github.com/Shruti-2303"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -43,7 +46,7 @@ export function Hero() {
             <Github className="h-6 w-6" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/shruti-sharma-2303/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-muted-foreground hover:text-foreground transition-colors"

@@ -50,6 +50,9 @@ export async function POST(request: NextRequest) {
       `,
     })
 
+    console.log("RESEND DATA:", data);
+    console.log("RESEND ERROR:", error);
+
     if (error) {
       console.error('Resend error:', error)
       return NextResponse.json(
