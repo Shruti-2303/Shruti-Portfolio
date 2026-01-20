@@ -68,7 +68,7 @@ export function Contact() {
   }
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-[#F8F9FA]">
+    <section ref={ref} className="py-24 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,9 +76,9 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-blue-600 font-semibold tracking-wide uppercase mb-4">CONTACT</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's work together</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-primary font-semibold tracking-wide uppercase mb-4">CONTACT</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Let's work together</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
             I'm currently open to new opportunities. Whether you have a project in mind or just want to chat, feel free
             to reach out.
           </p>
@@ -93,29 +93,29 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in touch</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Get in touch</h3>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-600">
-                  <Mail className="text-blue-600" size={20} />
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <Mail className="text-primary" size={20} />
                   <span>sharmas23032001@gmail.com</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <MapPin className="text-blue-600" size={20} />
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <MapPin className="text-primary" size={20} />
                   <span>Available for remote work</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Social profiles</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">Social profiles</h3>
               <div className="flex gap-3">
                 <a
                   href="https://github.com/shruti-2303"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"
+                  className="w-14 h-14 border border-input rounded-lg flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                   aria-label="GitHub"
                 >
                   <Github size={24} />
@@ -124,7 +124,7 @@ export function Contact() {
                   href="https://www.linkedin.com/in/shruti-sharma-2303/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"
+                  className="w-14 h-14 border border-input rounded-lg flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={24} />
@@ -143,57 +143,57 @@ export function Contact() {
           >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-gray-900 font-medium mb-2">
+                <label htmlFor="name" className="block text-foreground font-medium mb-2">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   placeholder="Your name"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 ${
-                    errors.name ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-card text-foreground placeholder:text-muted-foreground ${
+                    errors.name ? "border-destructive" : "border-input"
                   }`}
                   {...register("name")}
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                  <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-900 font-medium mb-2">
+                <label htmlFor="email" className="block text-foreground font-medium mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="you@example.com"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 ${
-                    errors.email ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-card text-foreground placeholder:text-muted-foreground ${
+                    errors.email ? "border-destructive" : "border-input"
                   }`}
                   {...register("email")}
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                  <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-gray-900 font-medium mb-2">
+              <label htmlFor="message" className="block text-foreground font-medium mb-2">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={6}
                 placeholder="Tell me about your project or opportunity..."
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 resize-none ${
-                  errors.message ? "border-red-500" : "border-gray-300"
+                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-card text-foreground placeholder:text-muted-foreground resize-none ${
+                  errors.message ? "border-destructive" : "border-input"
                 }`}
                 {...register("message")}
               />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+                <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
               )}
             </div>
 
@@ -201,7 +201,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

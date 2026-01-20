@@ -25,18 +25,18 @@ export function Skills() {
   return (
     <section id="skills" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="mb-12 text-center md:mb-16">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-blue-600">SKILLS</p>
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Technical expertise</h2>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">SKILLS</p>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Technical expertise</h2>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         {skillCategories.map((category) => (
-          <div key={category.title} className="rounded-lg border border-gray-200 bg-white p-8">
-            <h3 className="mb-2 text-xl font-bold text-gray-900">{category.title}</h3>
-            <p className="mb-6 text-sm text-gray-600">{category.subtitle}</p>
+          <div key={category.title} className="rounded-lg border border-border bg-card p-8">
+            <h3 className="mb-2 text-xl font-bold text-foreground">{category.title}</h3>
+            <p className="mb-6 text-sm text-muted-foreground">{category.subtitle}</p>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
-                <span key={skill} className="rounded-md bg-gray-100 px-3 py-1.5 text-sm text-gray-900">
+                <span key={skill} className="rounded-md bg-muted px-3 py-1.5 text-sm text-foreground">
                   {skill}
                 </span>
               ))}

@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section id="home" className="flex min-h-[calc(100vh-73px)] items-center px-6 md:px-12 lg:px-24 py-20">
       <div className="max-w-5xl">
-        <p className="text-primary text-base md:text-lg font-medium mb-4">Hello, I'm</p>
+        <p className="text-primary text-base md:text-lg font-medium mb-4">Hello, I'm Shruti Sharma</p>
 
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="text-foreground">Frontend Engineer building</span>

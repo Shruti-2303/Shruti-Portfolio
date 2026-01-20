@@ -28,12 +28,12 @@ export function Experience() {
   ]
 
   return (
-    <section className="px-6 py-16 md:px-12 md:py-24 lg:px-24 bg-[#F8F9FA]">
+    <section className="px-6 py-16 md:px-12 md:py-24 lg:px-24 bg-secondary">
       <div className="mx-auto max-w-5xl">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="text-blue-600 font-semibold tracking-wider text-sm mb-4">EXPERIENCE</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Where I've worked</h2>
+          <div className="text-primary font-semibold tracking-wider text-sm mb-4">EXPERIENCE</div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Where I've worked</h2>
         </div>
 
         {/* Timeline */}
@@ -42,9 +42,9 @@ export function Experience() {
             <div key={index} className="relative flex gap-6">
               {/* Icon and timeline line */}
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 text-primary-foreground"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -58,21 +58,21 @@ export function Experience() {
                     />
                   </svg>
                 </div>
-                <div className="w-0.5 h-full bg-gray-300 mt-2" />
+                <div className="w-0.5 h-full bg-border mt-2" />
               </div>
 
               {/* Content */}
               <div className="flex-1 pb-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">{exp.title}</h3>
-                <div className="text-blue-600 font-semibold text-lg mb-2">{exp.company}</div>
-                <div className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-1">{exp.title}</h3>
+                <div className="text-primary font-semibold text-lg mb-2">{exp.company}</div>
+                <div className="text-muted-foreground mb-6">
                   {exp.period} · {exp.location}
                 </div>
 
                 <ul className="space-y-3">
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex gap-3 text-gray-700 leading-relaxed">
-                      <span className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0 mt-2" />
+                    <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
                       <span>{achievement}</span>
                     </li>
                   ))}
