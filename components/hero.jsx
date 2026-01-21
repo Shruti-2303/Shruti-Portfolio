@@ -1,59 +1,90 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
+import { ArrowRight, Github, Linkedin } from "lucide-react"
 import { useScrollToSection } from "@/hooks/use-scroll-to-section"
 
 export function Hero() {
   const scrollToSection = useScrollToSection()
+
   return (
-    <section id="home" className="flex min-h-[calc(100vh-73px)] items-center px-6 md:px-12 lg:px-24 py-20">
-      <div className="max-w-5xl">
-        <p className="text-primary text-base md:text-lg font-medium mb-4">Hello, I'm</p>
+    <section id="home" className="min-h-screen flex items-center pt-20">
+      <div className="container mx-auto px-6">
+        <div className="max-w-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-primary font-medium mb-4"
+          >
+            Hello, I'm Shruti Sharma
+          </motion.p>
 
-        <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="text-foreground">Frontend Engineer building</span>
-          <br />
-          <span className="text-primary">scalable web experiences</span>
-        </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+          >
+            Frontend Engineer building{" "}
+            <span className="text-primary">scalable web experiences</span>
+          </motion.h1>
 
-        <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-          I specialize in React and Next.js to deliver high-performance, user-centric interfaces. Focused on clean code,
-          accessibility, and creating products that users love.
-        </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
+          >
+            I specialize in React and Next.js to deliver high-performance, user-centric interfaces. Focused on clean code,
+            accessibility, and creating products that users love.
+          </motion.p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-        <button
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-wrap gap-4 mb-12"
+          >
+            <button
               onClick={() => scrollToSection("projects")}
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors cursor-pointer"
             >
-            View Projects
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
+              View Projects
+              <ArrowRight size={18} />
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground font-medium rounded-md hover:bg-secondary transition-colors cursor-pointer"
+            >
+              Get in Touch
+            </button>
+          </motion.div>
 
-          <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")} className="cursor-pointer">
-            Get in Touch
-          </Button>
-        </div>
-
-        <div className="mt-16 flex items-center gap-4">
-          <a
-            href="https://github.com/Shruti-2303"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="GitHub"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-center gap-4"
           >
-            <Github className="h-6 w-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/shruti-sharma-2303/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="h-6 w-6" />
-          </a>
+            <a
+              href="https://github.com/Shruti-2303"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shruti-sharma-2303/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={22} />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

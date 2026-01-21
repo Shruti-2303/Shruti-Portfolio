@@ -1,85 +1,98 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
+import { Briefcase } from "lucide-react"
+
+const experiences = [
+  {
+    title: "Frontend Developer",
+    company: "Product-Based Startup",
+    period: "Jan 2023 – Present",
+    location: "Remote",
+    points: [
+      "Built and shipped 10+ user-facing features for a SaaS platform, improving user engagement by 25%",
+      "Developed reusable React component library, reducing development time by 40% across projects",
+      "Implemented performance optimizations that reduced page load time from 4s to 1.2s",
+      "Collaborated with backend engineers to integrate REST APIs and GraphQL endpoints",
+      "Led migration from legacy codebase to Next.js, improving SEO and Core Web Vitals scores",
+    ],
+  },
+  {
+    title: "Junior Frontend Developer",
+    company: "Web Agency",
+    period: "Jun 2021 – Dec 2022",
+    location: "Hybrid",
+    points: [
+      "Developed responsive websites for 15+ clients using React and modern CSS frameworks",
+      "Integrated headless CMS solutions (Strapi, Contentful) for dynamic content management",
+      "Implemented pixel-perfect designs from Figma mockups with cross-browser compatibility",
+      "Debugged and resolved complex UI issues, reducing bug reports by 30%",
+      "Mentored interns on React best practices and component architecture",
+    ],
+  },
+]
+
 export function Experience() {
-  const experiences = [
-    {
-      title: "Frontend Developer",
-      company: "Product-Based Startup",
-      period: "Jan 2023 – Present",
-      location: "Remote",
-      achievements: [
-        "Built and shipped 10+ user-facing features for a SaaS platform, improving user engagement by 25%",
-        "Developed reusable React component library, reducing development time by 40% across projects",
-        "Implemented performance optimizations that reduced page load time from 4s to 1.2s",
-        "Collaborated with backend engineers to integrate REST APIs and GraphQL endpoints",
-        "Led migration from legacy codebase to Next.js, improving SEO and Core Web Vitals scores",
-      ],
-    },
-    {
-      title: "Junior Frontend Developer",
-      company: "Web Agency",
-      period: "Jun 2021 – Dec 2022",
-      location: "Hybrid",
-      achievements: [
-        "Developed responsive landing pages and web applications for 15+ client projects",
-        "Worked with design team to convert Figma mockups into pixel-perfect React components",
-        "Maintained and improved existing codebases, fixing bugs and implementing new features",
-        "Participated in code reviews and followed Agile methodologies in sprint planning",
-      ],
-    },
-  ]
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="px-6 py-16 md:px-12 md:py-24 lg:px-24 bg-[#F8F9FA]">
-      <div className="mx-auto max-w-5xl">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="text-blue-600 font-semibold tracking-wider text-sm mb-4">EXPERIENCE</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Where I've worked</h2>
-        </div>
+    <section id="experience" className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-6">
+        <div ref={ref} className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              Experience
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+              Where I've worked
+            </h3>
+          </motion.div>
 
-        {/* Timeline */}
-        <div className="space-y-12 relative">
-          {experiences.map((exp, index) => (
-            <div key={index} className="relative flex gap-6">
-              {/* Icon and timeline line */}
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.article
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative pl-8 border-l-2 border-border"
+              >
+                <div className="absolute -left-3 top-0 p-1.5 bg-background border-2 border-primary rounded-full">
+                  <Briefcase size={14} className="text-primary" />
                 </div>
-                <div className="w-0.5 h-full bg-gray-300 mt-2" />
-              </div>
 
-              {/* Content */}
-              <div className="flex-1 pb-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">{exp.title}</h3>
-                <div className="text-blue-600 font-semibold text-lg mb-2">{exp.company}</div>
-                <div className="text-gray-600 mb-6">
-                  {exp.period} · {exp.location}
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-foreground">
+                    {exp.title}
+                  </h4>
+                  <p className="text-primary font-medium">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {exp.period} · {exp.location}
+                  </p>
                 </div>
 
                 <ul className="space-y-3">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex gap-3 text-gray-700 leading-relaxed">
-                      <span className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0 mt-2" />
-                      <span>{achievement}</span>
+                  {exp.points.map((point, pointIndex) => (
+                    <li
+                      key={pointIndex}
+                      className="text-muted-foreground leading-relaxed flex gap-3"
+                    >
+                      <span className="text-primary mt-2 flex-shrink-0">•</span>
+                      <span>{point}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

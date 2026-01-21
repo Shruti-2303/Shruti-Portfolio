@@ -40,8 +40,8 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="mx-auto">
+    <section id="projects" className="py-24">
+      <div className="container mx-auto px-6">
         <div ref={ref} className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -49,9 +49,13 @@ export function Projects() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Projects</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Featured work</h3>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              Projects
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+              Featured work
+            </h3>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               A selection of projects showcasing problem-solving, clean code, and attention to detail.
             </p>
           </motion.div>
@@ -63,10 +67,10 @@ export function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group flex flex-col p-6 bg-white border border-gray-200 rounded-xl hover:border-blue-600/40 hover:shadow-lg hover:shadow-blue-600/5 transition-all duration-300"
+                className="group flex flex-col p-6 bg-card border border-border rounded-xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h4>
                   <div className="flex gap-1">
@@ -74,7 +78,7 @@ export function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition-colors"
+                      className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-accent rounded transition-colors"
                       aria-label="View source code"
                     >
                       <Github size={16} />
@@ -83,7 +87,7 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition-colors"
+                      className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-accent rounded transition-colors"
                       aria-label="View live demo"
                     >
                       <ExternalLink size={16} />
@@ -91,20 +95,25 @@ export function Projects() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">{project.description}</p>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
 
                 <div className="mb-4 text-sm space-y-2">
-                  <p className="text-gray-600">
-                    <span className="text-gray-900 font-medium">Problem:</span> {project.problem}
+                  <p className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Problem:</span> {project.problem}
                   </p>
-                  <p className="text-gray-600">
-                    <span className="text-gray-900 font-medium">Solution:</span> {project.solution}
+                  <p className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Solution:</span> {project.solution}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-gray-100">
+                <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="px-2 py-0.5 text-xs bg-gray-100 text-gray-700 rounded">
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -120,10 +129,10 @@ export function Projects() {
             className="text-center mt-12"
           >
             <a
-              href="https://github.com/shruti-2303"
+              href="https://github.com/Shruti-2303"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium"
+              className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
             >
               View more on GitHub
               <ArrowUpRight size={18} />

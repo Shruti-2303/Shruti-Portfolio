@@ -2,8 +2,8 @@
 
 import { Mail, MapPin, Github, Linkedin, Send, Loader2 } from "lucide-react"
 import { motion } from "framer-motion"
-import { useRef, useState } from "react"
 import { useInView } from "framer-motion"
+import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -68,140 +68,155 @@ export function Contact() {
   }
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-[#F8F9FA]">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="text-blue-600 font-semibold tracking-wide uppercase mb-4">CONTACT</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's work together</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            I'm currently open to new opportunities. Whether you have a project in mind or just want to chat, feel free
-            to reach out.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-          {/* Left Column - Contact Info */}
+    <section id="contact" ref={ref} className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in touch</h3>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-600">
-                  <Mail className="text-blue-600" size={20} />
-                  <span>sharmas23032001@gmail.com</span>
-                </div>
-
-                <div className="flex items-center gap-3 text-gray-600">
-                  <MapPin className="text-blue-600" size={20} />
-                  <span>Available for remote work</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Social profiles</h3>
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/shruti-2303"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/shruti-sharma-2303/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 border border-gray-300 rounded-lg flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={24} />
-                </a>
-              </div>
-            </div>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              Contact
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+              Let's work together
+            </h3>
+            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+              I'm currently open to new opportunities. Whether you have a project 
+              in mind or just want to chat, feel free to reach out.
+            </p>
           </motion.div>
 
-          {/* Right Column - Contact Form */}
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-5 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="md:col-span-2 space-y-8"
+            >
               <div>
-                <label htmlFor="name" className="block text-gray-900 font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your name"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 ${
-                    errors.name ? "border-red-500" : "border-gray-300"
-                  }`}
-                  {...register("name")}
-                />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
-                )}
+                <h4 className="font-semibold text-foreground mb-4">
+                  Get in touch
+                </h4>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3 text-muted-foreground">
+                    <Mail size={18} className="text-primary" />
+                    <a
+                      href="mailto:sharmas23032001@gmail.com"
+                      className="hover:text-foreground transition-colors"
+                    >
+                      sharmas23032001@gmail.com
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3 text-muted-foreground">
+                    <MapPin size={18} className="text-primary" />
+                    <span>Available for remote work</span>
+                  </li>
+                </ul>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-900 font-medium mb-2">
-                  Email
+                <h4 className="font-semibold text-foreground mb-4">
+                  Social profiles
+                </h4>
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/Shruti-2303"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
+                    aria-label="GitHub"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shruti-sharma-2303/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.form
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              onSubmit={handleSubmit(onSubmit)}
+              className="md:col-span-3 space-y-6"
+            >
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    className={`w-full px-4 py-3 bg-card border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${
+                      errors.name ? "border-destructive" : ""
+                    }`}
+                    {...register("name")}
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="you@example.com"
+                    className={`w-full px-4 py-3 bg-card border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors ${
+                      errors.email ? "border-destructive" : ""
+                    }`}
+                    {...register("email")}
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
+                  )}
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
+                  Message
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="you@example.com"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 ${
-                    errors.email ? "border-red-500" : "border-gray-300"
+                <textarea
+                  id="message"
+                  rows={5}
+                  placeholder="Tell me about your project or opportunity..."
+                  className={`w-full px-4 py-3 bg-card border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none ${
+                    errors.message ? "border-destructive" : ""
                   }`}
-                  {...register("email")}
+                  {...register("message")}
                 />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                {errors.message && (
+                  <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
                 )}
               </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-gray-900 font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={6}
-                placeholder="Tell me about your project or opportunity..."
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-gray-900 placeholder:text-gray-400 resize-none ${
-                  errors.message ? "border-red-500" : "border-gray-300"
-                }`}
-                {...register("message")}
-              />
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
-              )}
-            </div>
-
-            <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {isSubmitting ? (
                   <>
@@ -215,8 +230,8 @@ export function Contact() {
                   </>
                 )}
               </button>
-            </div>
-          </motion.form>
+            </motion.form>
+          </div>
         </div>
       </div>
     </section>
