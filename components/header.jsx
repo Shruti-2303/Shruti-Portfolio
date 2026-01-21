@@ -72,7 +72,7 @@ export function Header() {
           </ul>
 
           <Button size="default" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="/Shruti_Sharma_Resume.pdf" download>
+            <a href="https://drive.google.com/file/d/1BCd40lYL6v5KzgCKhFBTBzUdjCbCnqx5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>
@@ -104,7 +104,7 @@ export function Header() {
           </button>
 
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="/Shruti_Sharma_Resume.pdf" download>
+            <a href="https://drive.google.com/file/d/1BCd40lYL6v5KzgCKhFBTBzUdjCbCnqx5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>
