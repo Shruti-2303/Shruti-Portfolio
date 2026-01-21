@@ -35,7 +35,7 @@ export function Header() {
   
 
   const navLinks = [
-    { id: "home", label: "About" },
+    { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
@@ -72,7 +72,7 @@ export function Header() {
           </ul>
 
           <Button size="default" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="/resume.pdf" download>
+            <a href="/Shruti_Sharma_Resume.pdf" download>
               Resume
             </a>
           </Button>
@@ -104,7 +104,7 @@ export function Header() {
           </button>
 
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="/resume.pdf" download>
+            <a href="/Shruti_Sharma_Resume.pdf" download>
               Resume
             </a>
           </Button>
